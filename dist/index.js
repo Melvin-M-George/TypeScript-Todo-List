@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const simpletask_1 = require("./simpletask");
+const prioritytask_1 = require("./prioritytask");
+const taskmanager_1 = require("./taskmanager");
+const taskManager = new taskmanager_1.TaskManager();
+const task1 = new simpletask_1.SimpleTask(1, "Play Badminton");
+const task2 = new prioritytask_1.PriorityTask(2, "Learn TypeScript", "High");
+taskManager.addTask(task1);
+taskManager.addTask(task2);
+console.log("To-Do List:");
+taskManager.listTasks();
+console.log("\nMarking Task 1 as completed...\n");
+taskManager.completeTask(1);
+console.log("Updated To-Do List:");
+taskManager.listTasks();
